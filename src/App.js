@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import Forecast from "./Forecast";
+import Firstrow from "./Firstrow";
+import Inputcity from "./Inputcity";
+import Overview from "./Overview";
+import Logo from "./Logo";
+import "./App.css";
+import "./Firstrow.css";
+import "./Forecast.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="weather-app">
+      <div className="weather-app-wrapper">
+        <Inputcity />
+        <Overview />
+        <Firstrow />
+        <Forecast />
+        <Logo />
+      </div>
     </div>
   );
 }
-
-export default App;
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
